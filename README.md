@@ -1,4 +1,4 @@
-# ADCON 4 - Automation Repository
+# IE protractor - Automation Repository
 Welcome to the Adcon 4 automation repo using Typescript & Protractor.
 
 <!-- TOC -->

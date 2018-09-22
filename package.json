@@ -1,0 +1,47 @@
+{
+  "name": "adcon4-console-automation",
+  "version": "1.0.0",
+  "description": "Adcon 4 - Automation Testing Project",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "protractor": "./node_modules/protractor/bin/protractor JSFiles/config.js",
+    "pretest": "npm run tsc",
+    "wdm": "webdriver-manager -- ",
+    "sleep": "node sleep.js",
+    "webdriver:start": "webdriver-manager start",
+    "webdriver:update": "webdriver-manager update --ie",
+    "dev": "tsc && protractor JSFiles/config.js --baseUrl=\"https://dev-sl-1.dev.mimecast.lan:19045/u/login/?gta=administration#/login\" --suite",
+    "qa": "tsc && protractor JSFiles/config.js --baseUrl=\"https://login-qan.mimecast.com/u/login/?gta=administration#/login\" --suite",
+    "stg": "tsc && protractor JSFiles/config.js --baseUrl=\"https://login-stg.mimecast.com/u/login/#/login?gta=administration\" --suite",
+    "test": "tsc && protractor JSFiles/config.js || npm run-script mandatory-cleanup",
+    "kemi": "concurrently \"npm run webdriver:start\" \"npm run pretest\" \"npm run test\"", // To run webdriver start and protractor test in same terminal
+    "mandatory-cleanup": "rm -rf JSFiles/",
+    "webdriver-update": "webdriver-manager update",
+    "posttest": "rm -rf JSFiles/",
+    "suites": "tsc && protractor JSFiles/config.js --suite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.devuk.mimecast.lan:2443/coreui/adcon-automation.git"
+  },
+  "keywords": [
+    "adcon4",
+    "protractor",
+    "typescript"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "@types/jasmine": "^2.6.0",
+    "base-64": "^0.1.0",
+    "chalk": "^2.4.1",
+    "jasmine": "^2.4.1",
+    "jasmine-reporters": "^2.2.1",
+    "jasmine-spec-reporter": "^4.2.1",
+    "protractor": "^5.1.2",
+    "protractor-console": "^3.0.0",
+    "protractor-jasmine2-html-reporter": "0.0.7",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.2"
+  }
+}

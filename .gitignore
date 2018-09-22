@@ -1,0 +1,5 @@
+node_modules
+JSFiles
+TResults/
+mc-credentials/
+.idea/

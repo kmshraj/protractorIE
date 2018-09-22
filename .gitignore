@@ -3,3 +3,4 @@ JSFiles
 TResults/
 mc-credentials/
 .idea/
+package-lock.json

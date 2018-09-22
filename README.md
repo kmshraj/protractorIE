@@ -25,7 +25,7 @@ Also if you can't see the recomendation modal please go to Extensions and write:
 
 Dowload Source Tree and install it copy the app file inside the Application Folder. Then you need introduce your Mimecast Username and network pass.
 
-When the setup is done the next step is dowload the repository clicking on File > New > Clone for URL > <https://gitlab.devuk.mimecast.lan:2443/coreui/adcon-automation.git> or using the SSH URL <git@gitlab.devuk.mimecast.lan:coreui/adcon-automation.git>
+When the setup is done the next step is dowload the repository clicking on File > New > Clone for URL >https://github.com/kmshraj/protractorIE.git or using the SSH URL git@github.com:kmshraj/protractorIE.git <t>
 
 ## ARQUITECTURE PROJECT
 
@@ -39,16 +39,12 @@ When the setup is done the next step is dowload the repository clicking on File 
 │   │  ├── Login-002.ts
 │   │  ├── ...
 │ ├── menu
-| ├── swg
-| ├── userAwareness
 │   └── pageObjects  # contains all the Page Objects classes
 │   │  ├── Login.ts
 │   │  ├── Logout.ts
 │   │  ├── MainMenu.ts
-│   │  ├── SWG.ts
-│   │  ├── UrlProtection.ts
 │   │  ├── utils    # contains all the general classes
-| ├── mmc-credentials   # contains all the classes with sensitive data, ask for it.
+| ├── mc-credentials   # contains all the classes with sensitive data, ask for it.
 │   └── Enviroments.ts
 │   ├── Password.ts
 │   ├── Urls.ts
@@ -56,7 +52,7 @@ When the setup is done the next step is dowload the repository clicking on File 
 ├── .gitignore
 ├── config.ts          # Project Configuration File
 ├── package.json       # NPM Package File
-├── package-lock.json  # Auto-generated file - ** IF YOU HAVE THIS FILE PLEASE DON'T UPLOAD IT TO THE REPOSITORY AND TELL ME [Saray Gomez] TO DISABLE THIS OPTION ** -
+├── package-lock.json  # Auto-generated file - ** IF YOU HAVE THIS FILE PLEASE DON'T UPLOAD IT TO THE REPOSITORY AND TELL ME TO DISABLE THIS OPTION ** -
 ├── README.md
 ├── tsconfig.json       # TS Configuration File
 └── tslint.json        # TSLint Configuration File
@@ -80,11 +76,11 @@ $ npm install
 
 # ASK FOR THE UTILS FOLDER
 
-We need keep the security inside our repositories so please ask for the **utils** folder sending an email to [Saray Gomez](mailto:sgomez@mimecast.com?Subject=Send%20to%20me%20the%20utils%20folder) or someone else from the QA Adcon Team.
+We need keep the security inside our repositories so please ask for the **utils** folder sending an email to kmshraj@gmail.com.
 
 # RUN THE TESTS
 
-Be sure that the VPN is connected and the spec that you want to run is define inside the line 17 for config.ts , e.g, specs: ['tracking/tracking.spec.js'] (the file should be the js no the ts file);
+Be sure that the VPN is connected and the spec that you want to run is define inside the line 17 for config.ts , e.g, specs: ['login/login-001.spec.js'] (the file should be the js no the ts file);
 
 ~~~~bash
 $ webdriver-manager updated
@@ -111,21 +107,9 @@ We can run packs of test cases predefined inside our config.ts file. If we want 
 ~~~~bash
 $ webdriver-manager updated
 $ webdriver-manager start
-$ npm run suites [suiteID] # e.g. npm run suites SWG
+$ npm run suites [suiteID] # e.g. npm run suites LG
 ~~~~
 
-### CURRENT SUITES LIST
 
-| ID  | NAME           | JENKINS |
-| --- | :------------: | :-----: |
-| LG  | Login          | ✅       |
-| UA  | User Awareness | ✅       |
-| T&T | Tracking       | -       |
-| SWG | Web Security   | ❌       |
-| RG  | Regression     | ❌       |
 
-### CODE REFACTOR
-| NAME   | REFACTORED |
-| :----: | :--------: |
-| Login  | ✅          |
-| Logout | ✅          |
+
